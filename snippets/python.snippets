@@ -82,7 +82,7 @@ snippet for
 snippet cod
 	# -*- coding: ${0:utf-8} -*-
 # Lambda
-snippet ld
+snippet lam
 	${1:var} = lambda ${2:vars} : ${0:action}
 snippet .
 	self.
@@ -175,11 +175,15 @@ snippet getopt
 # glog = get log
 snippet glog
 	import logging
+	logging.basicConfig(
+		format='%(asctime)s %(levelname)-8.8s [%(name)s:%(lineno)s] %(message)s',
+		datefmt='%Y-%m-%d %H:%M:%S',
+		level='INFO')
 	logger = logging.getLogger(${0:__name__})
 snippet le
 	logger.error(${0:msg})
 # conflict with lambda=ld, therefor we change into Logger.debuG
-snippet lg
+snippet ld
 	logger.debug(${0:msg})
 snippet lw
 	logger.warning(${0:msg})
